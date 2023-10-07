@@ -1,15 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from '../header/header.component';
+import { QuestionComponent } from './question/question.component';
+import { QuizIndexComponent } from './quiz-index/quiz-index.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    // HeaderComponent
+    QuestionComponent,
+    QuizIndexComponent
+
+  ],
+  exports: [
+    QuestionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class QuizModule { }

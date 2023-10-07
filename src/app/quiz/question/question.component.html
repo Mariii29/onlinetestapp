@@ -1,0 +1,15 @@
+<div class="question" >
+  <p class="mt-1 fw-bold">{{question.id}}.{{ question.question }}</p>
+  <div *ngFor="let option of question.options; let i = index">
+    <label>
+      <input
+        type="radio"
+        name="answer"
+        [value]="option"
+        [(ngModel)]="chosenAnswer"
+        (change)="onAnswerSelected(option)"
+      />
+      {{ option }}
+    </label>
+  </div>
+</div>

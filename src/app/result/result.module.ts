@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ResultIndexComponent } from './result-index/result-index.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ResultIndexComponent
+  ],
   imports: [
     CommonModule
   ]

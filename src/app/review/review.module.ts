@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReviewIndexComponent } from './review-index/review-index.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ReviewIndexComponent
+  ],
   imports: [
     CommonModule
   ]
