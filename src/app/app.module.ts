@@ -11,6 +11,9 @@ import { CardListComponent } from './card-list/card-list.component'
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card'
 import {MatIconModule} from '@angular/material/icon'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReviewModule } from './review/review.module';
+import { ResultModule } from './result/result.module';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,15 @@ import {MatIconModule} from '@angular/material/icon'
     BrowserModule,
     MatSlideToggleModule,
     QuizModule,
+    ReviewModule,
+    ResultModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

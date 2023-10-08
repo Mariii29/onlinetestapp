@@ -1,1 +1,37 @@
-<p>result-index works!</p>
+<!-- review-index.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col mt-2">
+      <h3 class="fw-bold">Here are your results</h3>
+
+      <div class="alert alert-warning" *ngIf="!submitted">
+        You have not submitted any Quiz!
+        <a href="/quiz" class="float-end">Go Back</a>
+      </div>
+      <div class="row">
+        <div class="col-6" *ngFor="let question of questions">
+          <div class="question" >
+            <!-- [class]="{'correct-answer': isAnswerCorrect(), 'wrong-answer': !isAnswerCorrect()}" -->
+            <p class="fw-bold">{{ question.id}}. {{ question.question }}<span [class]="'correct-ans'">({{question.correctAnswer}})</span></p>
+            <div class="row">
+              <div class="col-8">
+                <div *ngFor="let option of question.options">
+                  <label [class.selected-option]="option === question.chosenAnswer">
+                    <input type="radio" [value]="option" [disabled]="true" [checked]="question.chosenAnswer === option" />
+                    {{ option }}
+                  </label>
+                </div>
+              </div>
+              <div class="col-4">
+                <span  class="badge bg-success" *ngIf="question.chosenAnswer === question.correctAnswer">Correct</span>
+                <span class="badge bg-danger" *ngIf="question.chosenAnswer !== question.correctAnswer">Wrong</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

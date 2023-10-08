@@ -14,19 +14,19 @@ export class CardListComponent {
       title: 'Quiz',
       label: 'Quiz',
       description: 'Click Here to view the quiz questions.',
-      url: '/quiz' // Define the route path for Quiz
+      url: '/quiz'
     },
     {
       title: 'Review',
       label: 'Review',
       description: 'Review the answers of quiz done',
-      url: '/review' // Define the route path for Review
+      url: '/review'
     },
     {
       title: 'Result',
       label: 'Result',
       description: 'Here are the results of the quiz done ',
-      url: '/result' // Define the route path for Result
+      url: '/result'
     }
   ];
 

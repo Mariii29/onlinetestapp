@@ -1,0 +1,17 @@
+.selected-option {
+  color: violet;
+}
+
+/* quiz-index.component.css */
+.correct-ans {
+  color: green;
+}
+
+.correct-answer {
+  color: green;
+}
+
+.wrong-answer {
+  color: red;
+}
+

@@ -1,30 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { QuizService } from '../quiz.service';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  styleUrls: ['./question.component.css'],
 })
-export class QuestionComponent implements OnInit {
-   @Input() question: any; // Input property to receive the question
-  chosenAnswer: string | null = null; // Initialize chosenAnswer
+export class QuestionComponent {
+  @Input() question: any;
+  chosenAnswer: string | null = null;
 
-  constructor() {}
-
-  ngOnInit(): void {
-    // Load the questions data from session storage
-    const storedQuestions = sessionStorage.getItem('questions');
-    if (storedQuestions) {
-      const questions = JSON.parse(storedQuestions);
-      // Find the corresponding question using a unique identifier (e.g., question ID)
-      if (this.question && this.question.id) {
-        const matchingQuestion = questions.find((q: any) => q.id === this.question.id);
-        if (matchingQuestion) {
-          this.question = matchingQuestion;
-        }
-      }
-    }
-  }
+  constructor(private quizService: QuizService) {}
 
   onAnswerSelected(answer: string): void {
     this.chosenAnswer = answer;
@@ -43,5 +29,4 @@ export class QuestionComponent implements OnInit {
       }
     }
   }
-
 }

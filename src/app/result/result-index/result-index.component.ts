@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-result-index',
@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./result-index.component.css']
 })
 export class ResultIndexComponent {
+  @Input() question: any;
+
+  questions: any[] = [];
+  submitted : boolean = false;
+
+  isAnswerCorrect(): boolean {
+    return this.question.chosenAnswer === this.question.correctAnswer;
+  }
+
+  ngOnInit(): void {
+    const storedQuestions = sessionStorage.getItem('questions');
+    const submitted = sessionStorage.getItem('submitted')
+    if (storedQuestions && submitted) {
+      this.questions = JSON.parse(storedQuestions);
+      this.submitted = true;
+    }
+
+  }
+
 
 }

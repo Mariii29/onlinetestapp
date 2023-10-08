@@ -1,8 +1,8 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionComponent } from './question/question.component';
 import { QuizIndexComponent } from './quiz-index/quiz-index.component';
-import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +17,11 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
-  ]
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  // schemas:[
+  //   CUSTOM_ELEMENTS_SCHEMA
+  // ]
 })
 export class QuizModule { }

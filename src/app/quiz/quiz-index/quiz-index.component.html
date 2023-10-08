@@ -1,10 +1,20 @@
 <div class="container">
   <div class="row">
-  <div class="col mt-2">
-<h3 class="lead">Here is the list of Questions to attempt</h3>
-<app-question  *ngFor="let question of questions" [question]="question"></app-question>
+    <div class="col mt-2">
+      <div class=" d-flex">
+        <h3 class="lead my-2">Here is the list of Questions to attempt</h3>
+        <button class="btn btn-sm m-2 btn-secondary float-end ms-auto my-2" (click)="clearSession()">Clear All</button>
+        <button class="btn btn-sm m-2 btn-primary float-end  my-2" (click)="reviewQuiz()">Review</button>
+      </div>
 
+      <!-- <app-question *ngFor="let question of questions; let i=index"></app-question> -->
+      <div class="row">
+        <div class="col-6" *ngFor="let question of questions">
+          <app-question class="col" [question]="question"></app-question>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 </div>
-</div>
-
